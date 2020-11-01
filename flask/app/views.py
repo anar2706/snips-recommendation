@@ -9,13 +9,13 @@ nlu_bp = Blueprint('nlu', __name__)
 _nlu = None
 
 # We define a function here which will be called when the the app is started.
-def get_ready(json_name):
+def get_ready():
     """
     This method will be called only once to setup and train the NLU engine.
     :return:
     """
     global _nlu
-    _nlu = NLU(json_name)
+    _nlu = NLU()
     _nlu.train_engine()
     
 

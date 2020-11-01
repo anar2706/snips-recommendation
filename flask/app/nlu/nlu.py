@@ -11,11 +11,11 @@ from snips_nlu.default_configs import CONFIG_EN
 
 class NLU:
 
-    def __init__(self,json_name):
-        self.sample_dataset = NLU.load_dataset(json_name)
+    def __init__(self):
+        self.sample_dataset = NLU.load_dataset()
 
     @staticmethod
-    def load_dataset(json_name):
+    def load_dataset():
         """
         Load the sample dataset which will be used to train the snipsnlu NLP
         engine.
@@ -27,7 +27,7 @@ class NLU:
             # with io.open(str(Path('app', 'static', 'samples', 'sample_dataset.json'))) as fr:
             #     sample_dataset = json.load(fr)
             # return sample_dataset
-            with open(f'{BASE_DIR}/static/sample/{json_name}', 'r', encoding='utf-8') as fr:
+            with open(f'{BASE_DIR}/static/sample/test.json', 'r', encoding='utf-8') as fr:
                 sample_dataset = json.load(fr)
             return sample_dataset
 

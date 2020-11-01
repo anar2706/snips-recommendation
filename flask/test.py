@@ -15,7 +15,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 class BasicsTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.app = create_app('test.json')
+        self.app = create_app()
         self.app_context = self.app.app_context()
         self.app_context.push()
         self.client = self.app.test_client(use_cookies=True)
